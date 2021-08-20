@@ -15,15 +15,18 @@ public class ItemService {
 
     private final ItemRepository itemRepository;
 
+    //아이템 등록
     @Transactional
     public void saveItem(Item item){
         itemRepository.save(item);
     }
 
+    //전체 아이템 조회
     public List<Item> findItems(){
         return itemRepository.findAll();
     }
 
+    //특정 아이템 조회
     public Item findOne(Long itemId){
         return itemRepository.findOne(itemId);
     }
