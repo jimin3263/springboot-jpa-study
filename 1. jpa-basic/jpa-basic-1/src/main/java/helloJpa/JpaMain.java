@@ -16,6 +16,11 @@ public class JpaMain {
 
         try {
 
+            Book book = new Book();
+            book.setAuthor("하하하");
+            book.setIsbn("카카");
+            em.persist(book);
+
             //팀 저장
             Team team = new Team();
             team.setName("teamA");
