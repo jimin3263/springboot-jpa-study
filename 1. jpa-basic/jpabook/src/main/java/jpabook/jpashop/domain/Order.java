@@ -17,18 +17,18 @@ public class Order {
 //    @Column(name = "MEMBER_ID")
 //    private Long memberId;
 
-    @ManyToOne //주인
+    @ManyToOne(fetch = FetchType.LAZY) //주인
     @JoinColumn(name = "MEMBER_ID")
     private Member member;
     private LocalDateTime orderDate;
 
-    @OneToMany(mappedBy = "order")
+    @OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
     private List<OrderItem> orderItems = new ArrayList<>();
 
     @Enumerated(EnumType.STRING)
     private OrderStatus orderStatus;
 
-    @OneToOne
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "DELIVERT_ID")
     private Delivery delivery;
 
