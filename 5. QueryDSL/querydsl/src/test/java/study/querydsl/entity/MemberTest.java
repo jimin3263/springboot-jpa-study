@@ -12,7 +12,7 @@ import java.util.List;
 
 @SpringBootTest
 @Transactional
-@Commit
+//@Commit //기본은 rollback
 class MemberTest {
 
     @Autowired
